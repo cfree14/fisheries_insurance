@@ -69,7 +69,7 @@ freeR::check_names(ram$sci_name)
 # Merge data
 data <- ram %>%
   # Add PACFIN revenues and price
-  left_join(pacfin %>% select(sci_name, year, value_usd, price_usd_lb), by=c("sci_name", "year")) %>%
+  left_join(pacfin %>% select(sci_name, year, landings_lb, value_usd, price_usd_lb), by=c("sci_name", "year")) %>%
   # Reduce to years with all data
   na.omit() %>%
   # Arrange
